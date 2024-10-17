@@ -1,5 +1,5 @@
 ## Pinball Slot Adventure Oyun ici Video
-![Ekran-Kaydı-2024-10-18-00 54 47](https://github.com/user-attachments/assets/a15a9304-1a02-4c42-8b9e-e244dab1e767
+https://github.com/user-attachments/assets/a15a9304-1a02-4c42-8b9e-e244dab1e767
 <details>
     <summary><h2>Uygulma Amacı</h2></summary>
   Projenin amacı, ekrandaki çeşitli nesnelerle etkileşime giren topların oluşturulduğu bir fizik tabanlı oyun ortamı yaratmak
