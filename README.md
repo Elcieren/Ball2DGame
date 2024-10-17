@@ -234,15 +234,15 @@
  <table style="width: 100%;">
     <tr>
         <td style="text-align: center; width: 16.67%;">
-            <h4 style="font-size: 14px;">Görüntü İşleme Sonuçları 1 </h4>
+            <h4 style="font-size: 14px;">Görüntü 1 </h4>
             <img src="https://github.com/user-attachments/assets/73986ac5-77da-4362-8407-7161c69c01a4" style="width: 100%; height: auto;">
         </td>
       <td style="text-align: center; width: 16.67%;">
-            <h4 style="font-size: 14px;">Görüntü İşleme Sonuçları 1 </h4>
+            <h4 style="font-size: 14px;">Görüntü 2 </h4>
             <img src="https://github.com/user-attachments/assets/7fdbf852-9056-4fb3-ae19-fe19a3b2881b" style="width: 100%; height: auto;">
         </td>
       <td style="text-align: center; width: 16.67%;">
-            <h4 style="font-size: 14px;">Görüntü İşleme Sonuçları 1 </h4>
+            <h4 style="font-size: 14px;">Görüntü 3 </h4>
             <img src="https://github.com/user-attachments/assets/13457fe0-04ab-474b-9358-ef4a8549f317" style="width: 100%; height: auto;">
         </td>
     </tr>
