@@ -9,6 +9,7 @@ import SpriteKit
 
 
 class GameScene: SKScene , SKPhysicsContactDelegate {
+    var box: SKSpriteNode!
     
     
     var ScoreLabel: SKLabelNode!
@@ -77,6 +78,9 @@ class GameScene: SKScene , SKPhysicsContactDelegate {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touch = touches.first else { return }
         let location = touch.location(in: self)
+        if location.y < self.size.height / 2 {
+                return // Eğer dokunma ekranın alt yarısında ise hiçbir şey yapma
+            }
         let object = nodes(at: location)
         
         if object.contains(editLabel) {
@@ -85,7 +89,7 @@ class GameScene: SKScene , SKPhysicsContactDelegate {
             
             if editingMode {
                 let size = CGSize(width: Int.random(in: 16...128), height: 16)
-                let box = SKSpriteNode(color: UIColor(red: CGFloat.random(in: 0...1), green: CGFloat.random(in: 0...1), blue: CGFloat.random(in: 0...1), alpha: 1), size: size)
+                box = SKSpriteNode(color: UIColor(red: CGFloat.random(in: 0...1), green: CGFloat.random(in: 0...1), blue: CGFloat.random(in: 0...1), alpha: 1), size: size)
                 box.zRotation = CGFloat.random(in: 0...3)
                 box.position = location
 
@@ -94,7 +98,10 @@ class GameScene: SKScene , SKPhysicsContactDelegate {
 
                 addChild(box)
             } else {
-                let ball = SKSpriteNode(imageNamed: "ballRed")
+                let balls = ["ballRed" , "ballBlue" ,"ballCyan" , "ballGreen", "ballGrey", "ballPurple", "ballYellow"]
+                let random = Int.random(in: 0...6)
+                
+                let ball = SKSpriteNode(imageNamed: balls[random])
                 ball.physicsBody = SKPhysicsBody(circleOfRadius: ball.size.width / 2.0)
                 //Bu özellik, fizik cisminin başka bir nesneden sıçradığında ne kadar enerji kaybettiğini belirlemek için kullanılır
                 ball.physicsBody?.restitution = 0.6
@@ -168,7 +175,13 @@ class GameScene: SKScene , SKPhysicsContactDelegate {
     }
     
     func destroy(ball: SKNode) {
+        if let fireParticles = SKEmitterNode(fileNamed: "FireParticles") {
+            fireParticles.position = ball.position
+            addChild(fireParticles)
+        }
+
         ball.removeFromParent()
+        
     }
     
     func didBegin(_ contact: SKPhysicsContact) {
